@@ -1,3 +1,6 @@
+table.table-reports tr th, table.table-reports tr td{
+	vertical-align: middle;
+}
 table.table-reports tr th:first-child{
 	font-size:1.1em;
 }
