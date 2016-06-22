@@ -1,16 +1,19 @@
 (function(app){
 	'use strict'
-	//Load charts
-	app.google.charts.load('current', {'packages':['corechart', 'bar']});
-    app.google.charts.setOnLoadCallback(drawPieChart);
 
-    app.google.charts.setOnLoadCallback(drawStackedBarChart1);
-    app.google.charts.setOnLoadCallback(drawStackedBarChart2);
-    app.google.charts.setOnLoadCallback(drawStackedBarChart3);
+	//CLass
+	function prototypeApp(){
+		//Constructor
+		app.google.charts.load('current', {'packages':['corechart', 'bar']});
+	}
 
-    function drawPieChart() {
-
-        var data = google.visualization.arrayToDataTable([
+	prototypeApp.prototype.init = function(){
+	}
+	prototypeApp.prototype.chartCallBack = function(fn){
+		app.google.charts.setOnLoadCallback(fn);
+	}
+	prototypeApp.prototype.drawPieChart = function(){
+		var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     7],
           ['Eat',      4],
@@ -28,9 +31,8 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
-    }
-
-	function drawStackedBarChart1() {
+	}
+	prototypeApp.prototype.drawStackedBarChart1 = function(){
 		var data = google.visualization.arrayToDataTable([
 	        [' ', 'Value', 'Value in %'],
 	        ['Passende afgeronde kandidaten', 8175000, 8008000],
@@ -56,13 +58,9 @@
 		};
 
 		var chart1 = new google.charts.Bar(document.getElementById('barchart1'));
-		//var chart2 = new google.charts.Bar(document.getElementById('barchart2'));
-		//var chart2 = new google.charts.Bar(document.getElementById('barchart3'));
 		chart1.draw(data, options);
-		//chart2.draw(data, options);
-		//chart3.draw(data, options);
-	};
-	function drawStackedBarChart2() {
+	}
+	prototypeApp.prototype.drawStackedBarChart2 = function(){
 		var data = google.visualization.arrayToDataTable([
 	        [' ', 'Value', 'Value in %'],
 	        ['Gesproken kandidaten', 8175000, 8008000],
@@ -89,14 +87,10 @@
 			legend : {position:'none'}
 		};
 
-		//var chart1 = new google.charts.Bar(document.getElementById('barchart1'));
 		var chart2 = new google.charts.Bar(document.getElementById('barchart2'));
-		//var chart2 = new google.charts.Bar(document.getElementById('barchart3'));
-		//chart1.draw(data, options);
 		chart2.draw(data, options);
-		//chart3.draw(data, options);
-	};
-	function drawStackedBarChart3() {
+	}
+	prototypeApp.prototype.drawStackedBarChart3 = function(){
 		var data = google.visualization.arrayToDataTable([
 	        [' ', 'Value', 'Value in %'],
 	        ['1e week', 8175000, 8008000],
@@ -121,11 +115,25 @@
 			legend : {position:'none'}
 		};
 
-		//var chart1 = new google.charts.Bar(document.getElementById('barchart1'));
-		//var chart2 = new google.charts.Bar(document.getElementById('barchart2'));
 		var chart3 = new google.charts.Bar(document.getElementById('barchart3'));
-		//chart1.draw(data, options);
-		//chart2.draw(data, options);
 		chart3.draw(data, options);
 	};
+
+	//Init
+	init();
+
+	function init(){
+		var app = new prototypeApp();
+
+		app.chartCallBack(app.drawPieChart);
+		app.chartCallBack(app.drawStackedBarChart1);
+		app.chartCallBack(app.drawStackedBarChart2);
+		app.chartCallBack(app.drawStackedBarChart3);
+
+		//Datepicker
+		$('#pickerToUpdate1').datetimepicker({
+	        format: 'DD/MM/YYYY'
+	    });
+	}
+	
 })(window);
