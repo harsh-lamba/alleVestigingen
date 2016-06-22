@@ -25,7 +25,8 @@
           legend : {position:'none'},
           tooltip: { trigger: 'none' },
           height:'350px',
-          width:'350px'
+          width:'350px',
+          colors: ['#ff6412', '#171580']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -54,7 +55,8 @@
 				title: 'City'
 			},
 			bars: 'horizontal',
-			legend : {position:'none'}
+			legend : {position:'none'},
+			colors: ['#ff6412', '#171580']
 		};
 
 		var chart1 = new google.charts.Bar(document.getElementById('barchart1'));
@@ -84,7 +86,8 @@
 				title: 'City'
 			},
 			bars: 'horizontal',
-			legend : {position:'none'}
+			legend : {position:'none'},
+			colors: ['#ff6412', '#171580']
 		};
 
 		var chart2 = new google.charts.Bar(document.getElementById('barchart2'));
@@ -112,7 +115,8 @@
 				title: 'City'
 			},
 			bars: 'horizontal',
-			legend : {position:'none'}
+			legend : {position:'none'},
+			colors: ['#ff6412', '#171580']
 		};
 
 		var chart3 = new google.charts.Bar(document.getElementById('barchart3'));
