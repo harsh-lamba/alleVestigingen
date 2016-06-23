@@ -177,6 +177,11 @@
             applyButtonText: "Toepassen",
             applyOnMenuSelect: false
         });
+	}
+	prototypeApp.prototype.initializePopover = function(ele){
+	    $(ele).popover({
+	    	html: true
+	    });
 	};
 
 	//Init
@@ -190,6 +195,7 @@
 		app.chartCallBack(app.drawStackedBarChart2);
 		app.chartCallBack(app.drawStackedBarChart3);
 		app.initializeDateRange('#pickerToUpdate1');
+		app.initializePopover('.popoverData');
 	}
 	
 })(window);

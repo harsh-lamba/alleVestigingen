@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand brand brand-primary" href="#">
-            <img src="images/olympia_logo.png" alt="Olympia" class="img-responsive">
+            <img src="app/assets/images/olympia_logo.png" alt="Olympia" class="img-responsive">
           </a>
         </div>
       </div>
@@ -55,7 +55,11 @@
 
     <div class="container">
 
-    	
+    <!-- Title for the page -->
+      <h1 class="space-top-2x">
+        OCC Realtime Dashboard
+      </h1>
+      <hr/>
 
       <!-- Static navbar -->
       <div class="header clearfix">
@@ -67,7 +71,7 @@
             <li role="presentation"><a href="#">Generiek</a></li>
           </ul>
           <div class="pull-right col-sm-3">
-				<input id="pickerToUpdate1" name="pickerToUpdate1">
+          	<input id="pickerToUpdate1" name="pickerToUpdate1">
           </div>
         </nav>
       </div>
@@ -97,9 +101,9 @@
       				<table class="table table-striped table-reports table-striped" >
 						<thead>
 						<tr>
-							<th width="7%" class=" align-center">Afgeronde kandidaten</th>
-							<th width="6%">Gecontacteerd</th>
-							<th width="6%">Neit gecontacteered</th>
+							<th width="7%" class=" align-center"><div>Afgeronde kandidaten</div></th>
+							<th width="6%"><div>Gecontacteerd<span class="info popoverData" data-content="Gecontacteerd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+							<th width="6%"><div>Neit gecontacteered<span class="info popoverData" data-content="Neit gecontacteered" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 						</tr>
 						</thead>
 						<tbody>
@@ -119,10 +123,10 @@
 						<thead>
 							<tr>
 								<th width="14%" class=" align-center">Communicatie</th>
-								<th width="6%">1 werkdag</th>
-								<th width="6%">2 werkdagen</th>
-								<th width="6%">3 dagen</th>
-								<th width="6%">Langer</th>
+								<th width="6%"><div>1 werkdag<span class="info popoverData" data-content="1 werkdag" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>2 werkdagen<span class="info popoverData" data-content="2 werkdag" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>3 dagen<span class="info popoverData" data-content="3 dagen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Langer<span class="info popoverData" data-content="Langer" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -168,9 +172,9 @@
 						<thead>
 							<tr>
 								<th width="11%" class=" align-center">Passende afgeronde kandidaten</th>
-								<th width="6%">Gesprek ingepland</th>
-								<th width="6%">Gesprek plaats gevonden</th>
-								<th width="6%">Neit opgevolgd</th>
+								<th width="6%"><div>Gesprek ingepland<span class="info popoverData" data-content="Gesprek ingepland" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Gesprek plaats gevonden<span class="info popoverData" data-content="Gesprek plaats gevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Neit opgevolgd<span class="info popoverData" data-content="Neit opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -207,11 +211,11 @@
 						<thead>
 							<tr>
 								<th width="11%" class=" align-center">Gesproken kandidaten</th>
-								<th width="6%">Kandidaat voorgesteld bij klant</th>
-								<th width="6%">Sollicitatiegesprek ingepland</th>
-								<th width="6%">Sollicitatiegesprek plaatsgevonden</th>
-								<th width="6%">Niet opgevolgd</th>
-								<th width="6%">Kandidaat geplaatst</th>
+								<th width="6%"><div>Kandidaat voorgesteld bij klant<span class="info popoverData" data-content="Kandidaat voorgesteld bij klant" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Sollicitatiegesprek ingepland<span class="info popoverData" data-content="Sollicitatiegesprek ingepland" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Sollicitatiegesprek plaatsgevonden<span class="info popoverData" data-content="Sollicitatiegesprek plaatsgevonden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Niet opgevolgd<span class="info popoverData" data-content="Niet opgevolgd" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Kandidaat geplaatst<span class="info popoverData" data-content="Kandidaat geplaatst" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -252,10 +256,10 @@
 						<thead>
 							<tr>
 								<th width="15%" class=" align-center">Geplaatste kandidaten</th>
-								<th width="6%">Uitzendplaatsingen</th>
-								<th width="6%">Uitzendplaatsingen met uren</th>
-								<th width="6%">W & S plaatsingen</th>
-								<th width="6%">W & S plaatsingen met factuur</th>
+								<th width="6%"><div>Uitzendplaatsingen<span class="info popoverData" data-content="Uitzendplaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>Uitzendplaatsingen met uren<span class="info popoverData" data-content="Uitzendplaatsingen met uren" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>W & S plaatsingen<span class="info popoverData" data-content="W & S plaatsingen" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>W & S plaatsingen met factuur<span class="info popoverData" data-content="W & S plaatsingen met factuur" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -294,9 +298,9 @@
 						<thead>
 							<tr>
 								<th width="11%" class=" align-center">1e week</th>
-								<th width="6%">1e maand</th>
-								<th width="6%">3 maanden</th>
-								<th width="6%">3 maandelijks contact na 1e 3 maanden</th>
+								<th width="6%"><div>1e maand<span class="info popoverData" data-content="1e maand" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>3 maanden<span class="info popoverData" data-content="3 maanden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
+								<th width="6%"><div>3 maandelijks contact na 1e 3 maanden<span class="info popoverData" data-content="3 maandelijks contact na 1e 3 maanden" rel="popover" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle"></i></span></div></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -322,14 +326,15 @@
       		</div>
       	</div>
       </div>
-	</div> <!-- /container -->
 
+    </div> <!-- /container -->
 
-	<!-- footer -->
+    <!-- footer -->
 	<footer class="brand-ignite" id="main-footer" style="visibility: visible;">
       <div class="powered-Cont">&nbsp;
       </div>
     </footer>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
