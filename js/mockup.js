@@ -121,6 +121,62 @@
 
 		var chart3 = new google.charts.Bar(document.getElementById('barchart3'));
 		chart3.draw(data, options);
+	}
+	prototypeApp.prototype.initializeDateRange = function(ele){
+		$(ele).daterangepicker({
+            initialText: 'Selecteer periode',
+            presetRanges: [{
+                text: 'Afgelopen 7 dagen', //Last 7 days
+                dateStart: function () {
+                    return moment().subtract(7, 'days')
+                },
+                dateEnd: function () {
+                    return moment()
+                }
+            }, {
+                text: 'Deze week', //This week, Monday up to present day of the week.
+                dateStart: function () {
+                    return moment().startOf('week').add(1, 'days')
+                },
+                dateEnd: function () {
+                    return moment()
+                }
+            }, {
+                text: 'Vorige week', //Previous week. So Monday untill Sunday of the previous week
+                dateStart: function () {
+                    return moment().subtract(1, 'weeks').startOf('week')
+                },
+                dateEnd: function () {
+                    return moment().subtract(1, 'weeks').endOf('week')
+                }
+            }, {
+                text: 'Afgelopen 30 dagen', //Take the last 30 days. Should be the same as the standard view
+                dateStart: function () {
+                    return moment().subtract(29, 'days')
+                },
+                dateEnd: function () {
+                    return moment()
+                }
+            }, {
+                text: 'Vorige maand',
+                dateStart: function () {
+                    return moment().subtract(1, 'months').startOf('month')
+                },
+                dateEnd: function () {
+                    return moment().subtract(1, 'months').endOf('month')
+                }
+            }, {
+                text: 'Sinds 1e publicatie',
+                dateStart: function () {
+                    return moment(jobStart, "MMDDYYYY")
+                },
+                dateEnd: function () {
+                    return moment(jobEnd, "MMDDYYYY")
+                }
+            }],
+            applyButtonText: "Toepassen",
+            applyOnMenuSelect: false
+        });
 	};
 
 	//Init
@@ -133,11 +189,7 @@
 		app.chartCallBack(app.drawStackedBarChart1);
 		app.chartCallBack(app.drawStackedBarChart2);
 		app.chartCallBack(app.drawStackedBarChart3);
-
-		//Datepicker
-		$('#pickerToUpdate1').datetimepicker({
-	        format: 'DD/MM/YYYY'
-	    });
+		app.initializeDateRange('#pickerToUpdate1');
 	}
 	
 })(window);
